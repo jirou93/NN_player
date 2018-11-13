@@ -9,6 +9,7 @@ Created on Fri Nov  9 17:04:23 2018
 """
 
 import numpy as np
+import random
 from Cards import Card
 
 class Deck:
@@ -27,3 +28,16 @@ class Deck:
     def cardClub(self, i) :
         c = Card(i)
         return c.club()
+    
+    # Returns the value of a card
+    def cardValue(self, i) :
+        c = Card(i)
+        return c.value
+    
+    # Returns one of the unused cards from the deck and adds this card to usedCards
+    def selectRandomCard(self) :
+        card = random.randint(1,52)
+        while self.used_cards.__contains__(card) :
+            card = random.randint(1,52)
+        self.used_cards.append(card)
+        return card

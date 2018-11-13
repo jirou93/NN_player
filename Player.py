@@ -7,13 +7,14 @@ Created on Tue Nov 13 14:22:33 2018
 @author: pauca
 """
 
-class player:
+class Player:
     
     def __init__(self):
         self.position = 1
+        self.chips = 0
         self.blinds = 0
-        self.card1 = "X"
-        self.card2 = "X"
+        self.card1 = 0
+        self.card2 = 0
     
     
     # this funciton will change the player cards
@@ -28,4 +29,5 @@ class player:
     # this function will swap the position of the player
     def swapPosition(self) :
         self.position = self.position%2 +1
+    
     
