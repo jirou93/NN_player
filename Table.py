@@ -24,6 +24,11 @@ class Table:
         self.hand_number = 0
         self.hand_increase_blinds = 0
     
+    # This function will take the blinds from the players
+    def takeBlinds(self) :
+        if dealer == 1:
+            
+    
     # Set the number of hands that we need to play to increase the blinds
     def setHandsToIncreaseBB(self, hands) :
         self.hand_increase_blinds = hands

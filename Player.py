@@ -29,5 +29,10 @@ class Player:
     # this function will swap the position of the player
     def swapPosition(self) :
         self.position = self.position%2 +1
+        
+    # this function will take the chips from player total chips
+    # we asume that when we call this function the number of chips to take are less or equal to total chipsof the player
+    def takeChips(self, chips) :
+        
     
     
