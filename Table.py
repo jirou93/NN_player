@@ -22,21 +22,26 @@ class Table:
         self.dealer = 1
         self.pot = 0
         self.hand_number = 0
-        self.hand_increase_blinds = 0
+    
+    # This function will start the next hand
+    def newHand(self) :
+        self.changeDealer()
+        self.restartDeck()
+        self.hand_number += 1
+        self.dealCards()
+        self.takeBlinds()
+        
     
     # This function will take the blinds from the players
     def takeBlinds(self) :
-        if dealer == 1:
-            
+        if self.dealer == 1:
+            self.player1.takeChips(self.bigBlind)
+            self.player2.takeChips(self.bigBlind/2)
+        else:
+            self.player1.takeChips(self.bigBlind/2)
+            self.player2.takeChips(self.bigBlind)
+        self.pot += self.bigBlind + self.bigBlind/2
     
-    # Set the number of hands that we need to play to increase the blinds
-    def setHandsToIncreaseBB(self, hands) :
-        self.hand_increase_blinds = hands
-    
-    # Set the initial cost of the BigBlind
-    def setBigBlind(self, bb) :
-        self.bigBlind = bb
-        
     # Set the players total chips
     def setChips(self, chips) :
         self.player1.chips = chips

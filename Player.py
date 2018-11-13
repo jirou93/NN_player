@@ -12,7 +12,6 @@ class Player:
     def __init__(self):
         self.position = 1
         self.chips = 0
-        self.blinds = 0
         self.card1 = 0
         self.card2 = 0
     
@@ -21,10 +20,6 @@ class Player:
     def changeCards(self, c1, c2) :
         self.card1 = c1
         self.card2 = c2
-
-    # this function will change the values of the player blinds
-    def changeBlinds(self, blinds) :
-        self.blinds = blinds
         
     # this function will swap the position of the player
     def swapPosition(self) :
@@ -33,6 +28,6 @@ class Player:
     # this function will take the chips from player total chips
     # we asume that when we call this function the number of chips to take are less or equal to total chipsof the player
     def takeChips(self, chips) :
-        
+        self.chips -= chips
     
     
