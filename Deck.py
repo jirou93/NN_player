@@ -9,7 +9,7 @@ Created on Fri Nov  9 17:04:23 2018
 """
 
 import numpy as np
-import Cards
+from Cards import Card
 
 class Deck:
     
@@ -19,4 +19,11 @@ class Deck:
         # Array that contains all the cards that had been used before
         self.used_cards = []
         
+    # Adds a new card to the list of used cards
+    def useCard(self, i) :
+        self.used_cards.append(i)
         
+    # Returns the club of a Card
+    def cardClub(self, i) :
+        c = Card(i)
+        return c.club()
