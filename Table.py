@@ -21,11 +21,12 @@ class Table:
         self.bigBlind = 0
         self.dealer = 1
         self.pot = 0
-        self.hand_number = 0
+        self.hand_number = 1
     
     # This function will start the next hand
     def newHand(self) :
         self.changeDealer()
+        self.pot = 0
         self.restartDeck()
         self.hand_number += 1
         self.dealCards()
